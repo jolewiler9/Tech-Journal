@@ -1,0 +1,6 @@
+{ "vcenter": [
+    {
+        "vcenterhost" : "vcenter.jared.local",
+        "vcenteradmin" : "jared-adm@jared.local
+    }]
+}

@@ -1,3 +1,6 @@
+import time
+from pyVmomi import vim
+
 def wait_for_task(task):
     try:
         while task.info.state == vim.TaskInfo.State.running:

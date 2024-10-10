@@ -1,3 +1,6 @@
+import time
+from pyVmomi import vim
+
 def find_vm(vm_name):
     try:
         # Searches for the VM in the inventory

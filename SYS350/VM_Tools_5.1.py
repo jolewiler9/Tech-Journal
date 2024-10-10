@@ -26,32 +26,6 @@ s.verify_mode = ssl.CERT_NONE
 # Connect to vCenter
 si = SmartConnect(host=vcenter_host, user=vcenter_user, pwd=vcenter_pass, sslContext=s)
 
-# Function to wait for task completion
-def wait_for_task(task):
-    while task.info.state == vim.TaskInfo.State.running:
-        print("Task is still running...")
-        time.sleep(2)
-    if task.info.state == vim.TaskInfo.State.success:
-        print("Task completed successfully!")
-        return task.info.result
-    else:
-        print(f"Task failed with error: {task.info.error}")
-        raise task.info.error
-
-# Function to find a VM by name
-def find_vm(vm_name):
-    for vm in si.content.rootFolder.childEntity[0].vmFolder.childEntity:
-        if vm.name == vm_name:
-            return vm
-    raise Exception(f"VM {vm_name} not found.")
-
-# Function to find a network by name
-def find_network(network_name):
-    for network in si.content.rootFolder.childEntity[0].network:
-        if network.name == network_name:
-            return network
-    raise Exception(f"Network {network_name} not found.")
-
 # Function to power on a VM
 def power_on_vm():
     try:

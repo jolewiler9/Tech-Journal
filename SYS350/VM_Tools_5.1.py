@@ -5,6 +5,11 @@ from pyVmomi import vim
 import ssl
 import time
 
+# Load custom functions
+from find_vm import find_vm
+from wait_for_task import wait_for_task
+from find_network import find_network
+
 # Load vCenter credentials from JSON file
 with open("vcenter_config.json") as config_file:
     config = json.load(config_file)

@@ -32,12 +32,14 @@ def wait_for_task(task):
     else:
         print(f"Task failed with error: {task.info.error}")
         raise task.info.error
+
 # Function to find a VM by name
 def find_vm(vm_name):
     for vm in si.content.rootFolder.childEntity[0].vmFolder.childEntity:
         if vm.name == vm_name:
             return vm
     raise Exception(f"VM {vm_name} not found.")
+    
 # Function to find a network by name
 def find_network(network_name):
     for network in si.content.rootFolder.childEntity[0].network:

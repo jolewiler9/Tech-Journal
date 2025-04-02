@@ -1,0 +1,5 @@
+[vyos]
+10.0.17.103 hostname=blue1-fw mac=00:50:56:89:5f:f0 wan_ip=10.0.17.200 lan_ip=10.0.5.2 lan=10.0.5.0/24 name_server=10.0.17.4 gateway=10.0.17.2 password_hash=1e4b07481c54f523a85b94a8a0dbaf36d9689ffacb5363d3b5f28c421de6196cf64d7931dc147b21ad6a6926aa96e737c767309fdf42b0ae6284cb2f1e86f8ab
+
+[vyos:vars]
+ansible_python_interpreter=/usr/bin/python3

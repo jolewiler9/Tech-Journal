@@ -33,7 +33,7 @@ service {
     dns {
         forwarding{
             allow-from {{ lan }}
-            listen address {{ lan_ip }}
+            listen-address {{ lan_ip }}
             name-server {{ name_server }}
             system
         }
